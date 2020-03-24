@@ -71,7 +71,10 @@ export default function Index({ pageContext: { days } }: Props) {
 			</main>
 			<Text as="footer" variant="small">
 				<span aria-hidden="true">🦠</span> Made at home in Berlin during the
-				Coronavirus by <Link href="https://sapegin.me/">Artem Sapegin</Link>
+				Coronavirus by <Link href="https://sapegin.me/">Artem Sapegin</Link>,{' '}
+				<Link href="https://github.com/sapegin/every.morning.photos">
+					source code
+				</Link>
 			</Text>
 		</Base>
 	);
