@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Text, Heading, Link, VisuallyHidden } from 'tamia';
+import { Box, Text, Link, VisuallyHidden } from 'tamia';
+import { YearHeading } from '../components/YearHeading';
 import Base from './Base';
 
 interface Photo {
@@ -23,27 +24,6 @@ type Props = {
 };
 
 const HEADINGS = ['Today', 'Yesterday', 'Day before yesterday'];
-
-const YearHeading = styled(Heading)`
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	white-space: nowrap;
-	&:before,
-	&:after {
-		content: '';
-		border-top: 1px solid ${(props) => props.theme.colors.light};
-		flex-grow: 1;
-	}
-	&:before {
-		margin-right: 0.4em;
-	}
-	&:after {
-		margin-left: 0.4em;
-	}
-`;
 
 const Image = styled.img`
 	max-width: 100%;
