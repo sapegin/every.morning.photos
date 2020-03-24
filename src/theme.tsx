@@ -99,13 +99,14 @@ export default {
 			...textBaseStyles,
 			fontSize: fontSizes.l,
 		},
-		label: {
+		verticalLabel: {
 			...headingBaseStyles,
-			paddingY: space.xs,
-			paddingX: space.s,
+			padding: space.s,
 			fontSize: fontSizes.s,
 			color: colors.bg,
 			textShadow: textShadows.inverted,
+			transform: 'rotate(-90deg) translateY(-100%)',
+			transformOrigin: 'right top',
 		},
 	},
 } as const;

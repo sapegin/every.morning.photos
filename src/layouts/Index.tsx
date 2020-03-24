@@ -53,7 +53,7 @@ export default function Index({ pageContext: { days } }: Props) {
 									<Link href={permalink}>
 										<Image src={media_url} alt={caption} />
 										<Box position="absolute" top={0} right={0}>
-											<Text variant="label">{getYear(timestamp)}</Text>
+											<Text variant="verticalLabel">{getYear(timestamp)}</Text>
 										</Box>
 									</Link>
 								</Box>
