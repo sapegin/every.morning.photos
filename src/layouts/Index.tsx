@@ -30,6 +30,11 @@ const Image = styled.img`
 	height: auto;
 `;
 
+function getYear(date: string) {
+	const [year] = date.split('-');
+	return year;
+}
+
 export default function Index({ pageContext: { days } }: Props) {
 	return (
 		<Base>
@@ -43,10 +48,13 @@ export default function Index({ pageContext: { days } }: Props) {
 							{HEADINGS[index]}
 						</YearHeading>
 						{day.photos.length > 0 ? (
-							day.photos.map(({ media_url, permalink, caption }) => (
-								<Box mb="m">
+							day.photos.map(({ media_url, permalink, caption, timestamp }) => (
+								<Box mb="m" position="relative">
 									<Link href={permalink}>
 										<Image src={media_url} alt={caption} />
+										<Box position="absolute" top={0} right={0}>
+											<Text variant="label">{getYear(timestamp)}</Text>
+										</Box>
 									</Link>
 								</Box>
 							))

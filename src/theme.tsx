@@ -32,6 +32,9 @@ const colors = {
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
+const textShadows = {
+	inverted: '0 0 1rem rgba(0, 0, 0, 0.7), 0 0 0.2ex rgba(0, 0, 0, 0.3)',
+};
 const fontWeights = {
 	base: 300,
 	heading: 400,
@@ -73,6 +76,7 @@ export default {
 	lineHeights,
 	letterSpacings,
 	colors,
+	textShadows,
 	breakpoints,
 	headingStyles: {
 		2: {
@@ -94,6 +98,14 @@ export default {
 		large: {
 			...textBaseStyles,
 			fontSize: fontSizes.l,
+		},
+		label: {
+			...headingBaseStyles,
+			paddingY: space.xs,
+			paddingX: space.s,
+			fontSize: fontSizes.s,
+			color: colors.bg,
+			textShadow: textShadows.inverted,
 		},
 	},
 } as const;
