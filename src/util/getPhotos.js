@@ -4,6 +4,13 @@ const { add } = require('date-fns');
 
 require('dotenv').config();
 
+if (!process.env.INSTAGRAM_ACCESS_TOKEN) {
+	console.error(
+		'Instagram API token not found, define INSTAGRAM_ACCESS_TOKEN environmental variable'
+	);
+	process.exit(1);
+}
+
 const MAX_PAGES = 30;
 
 /**
