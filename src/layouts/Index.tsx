@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Text, Link, VisuallyHidden } from 'tamia';
+import { Box, Text, Image, Link, VisuallyHidden } from 'tamia';
 import { YearHeading } from '../components/YearHeading';
 import Base from './Base';
 
@@ -24,11 +23,6 @@ type Props = {
 };
 
 const HEADINGS = ['Today', 'Yesterday', 'Day before yesterday'];
-
-const Image = styled.img`
-	max-width: 100%;
-	height: auto;
-`;
 
 function getYear(date: string) {
 	const [year] = date.split('-');
