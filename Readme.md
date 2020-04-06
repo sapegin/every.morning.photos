@@ -8,16 +8,18 @@ First clone the repo, install dependencies and build the site:
 
 ```bash
 git clone https://github.com/sapegin/every.morning.photos.git
-cd sapegin.me
+cd every.morning.photos
 npm install
-npm run build
+INSTAGRAM_ACCESS_TOKEN=<your token> npm run build
 ```
 
 Then run dev server (it will refresh the page after any changes in JS, styles or content):
 
 ```bash
-npm start
+INSTAGRAM_ACCESS_TOKEN=<your token> npm start
 ```
+
+**Note:** [Use Instagram token generator](https://developers.facebook.com/docs/instagram-basic-display-api/overview#user-token-generator) to generate a token with access to your feed.
 
 ## Author
 
