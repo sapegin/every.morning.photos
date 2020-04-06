@@ -47,7 +47,7 @@ export default function Index({ pageContext: { days } }: Props) {
 					My Instagram photos made on this day
 				</VisuallyHidden>
 				{days.map((day, index) => (
-					<Box key={day.date} mb="xl">
+					<Box key={day.date} mx={['-m', 0]} mb="xl">
 						<YearHeading level={2} mb="m">
 							{HEADINGS[index]}
 						</YearHeading>
@@ -55,7 +55,7 @@ export default function Index({ pageContext: { days } }: Props) {
 							day.photos.map(({ media_url, permalink, caption, timestamp }) => (
 								<Box key={permalink} mb="m" position="relative">
 									<Link href={permalink}>
-										<Image src={media_url} alt={caption} />
+										<Image src={media_url} alt={caption} expand={false} />
 										<Box position="absolute" top={0} right={0}>
 											<Text variant="verticalLabel">{getYear(timestamp)}</Text>
 										</Box>
@@ -63,7 +63,9 @@ export default function Index({ pageContext: { days } }: Props) {
 								</Box>
 							))
 						) : (
-							<Text variant="small">No photos from this day</Text>
+							<Text mx={['m', 0]} variant="small">
+								No photos from this day
+							</Text>
 						)}
 					</Box>
 				))}
