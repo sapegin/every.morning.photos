@@ -31,9 +31,17 @@ function getYear(date: string) {
 	return year;
 }
 
+function getFirstPhoto(days: [Day, Day, Day]) {
+	const dayWithPhotos = days.find((day) => day.photos.length > 0);
+	if (!dayWithPhotos) {
+		return undefined;
+	}
+	return dayWithPhotos.photos[0].media_url;
+}
+
 export default function Index({ pageContext: { days } }: Props) {
 	return (
-		<Base>
+		<Base image={getFirstPhoto(days)}>
 			<main>
 				<VisuallyHidden as="h1">
 					My Instagram photos made on this day
