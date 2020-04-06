@@ -1,0 +1,7 @@
+{
+	"root": true,
+	"extends": ["tamia/typescript-react"],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	}
+}

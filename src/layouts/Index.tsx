@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/camelcase: ["error", {allow: ['media_url']}] */
+
 import React from 'react';
 import { Box, Text, Image, Link, VisuallyHidden } from 'tamia';
 import { YearHeading } from '../components/YearHeading';
@@ -43,7 +45,7 @@ export default function Index({ pageContext: { days } }: Props) {
 						</YearHeading>
 						{day.photos.length > 0 ? (
 							day.photos.map(({ media_url, permalink, caption, timestamp }) => (
-								<Box mb="m" position="relative">
+								<Box key={permalink} mb="m" position="relative">
 									<Link href={permalink}>
 										<Image src={media_url} alt={caption} />
 										<Box position="absolute" top={0} right={0}>
